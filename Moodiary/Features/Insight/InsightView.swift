@@ -12,7 +12,8 @@ struct InsightView: View {
     var body: some View {
         
         WithViewStore(self.store, observe: { $0 }) { viewStore in
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            Text("Hello, InsightView!")
+            CompanyListView()
         }
     }
 }
@@ -98,39 +99,40 @@ struct CompanyCard: View {
         .cornerRadius(16)
     }
 }
-struct ContentViews: View {
+struct CompanyListView: View {
+    let companies = [
+        CompanyInfo(name: "Hygge Living", rating: 4.8, reviews: 2183, image: "hygge", category1: "Furniture", category2: "Danish Living"),
+        CompanyInfo(name: "Chair & Son", rating: 4.5, reviews: 1397, image: "chair", category1: "Furniture", category2: "Wooden Products"),
+        CompanyInfo(name: "Good Home", rating: 4.2, reviews: 3234, image: "home", category1: "Furniture", category2: "Cheap furniture")
+    ]
+    
     var body: some View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
             
-            VStack(spacing: 15) {
-                VStack(spacing: 15) {
-                    CompanyCard(
-                        name: "Hygge Living",
-                        rating: 4.8,
-                        reviews: 2183,
-                        image: "hygge",
-                        category1: "Furniture",
-                        category2: "Danish Living"
-                    )
-                    
-                    CompanyCard(
-                        name: "Chair & Son",
-                        rating: 4.5,
-                        reviews: 1397,
-                        image: "chair",
-                        category1: "Furniture",
-                        category2: "Wooden Products"
-                    )
-                    
-                    CompanyCard(
-                        name: "Good Home",
-                        rating: 4.2,
-                        reviews: 3234,
-                        image: "home",
-                        category1: "Furniture",
-                        category2: "Cheap furniture"
-                    )
+            VStack(spacing: 0) {
+                Text("Recently reviewed companies")
+                    .foregroundColor(.white)
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading)
+                    .padding(.vertical, 10)
+                
+                List {
+                    ForEach(companies, id: \.name) { company in
+                        CompanyCard(
+                            name: company.name,
+                            rating: company.rating,
+                            reviews: company.reviews,
+                            image: company.image,
+                            category1: company.category1,
+                            category2: company.category2
+                        )
+                        .listRowBackground(Color.black)
+                        .listRowSeparator(.hidden)
+                        .padding(.bottom, 10)
+                    }
                     
                     Button(action: {
                         // Action for view more
@@ -143,27 +145,21 @@ struct ContentViews: View {
                             .cornerRadius(25)
                             .padding(.horizontal, 50)
                     }
-                    .padding(.top, 10)
+                    .listRowBackground(Color.black)
+                    .listRowSeparator(.hidden)
                 }
-                .padding(.horizontal)
-                
-                Text("Recently reviewed companies")
-                    .foregroundColor(.white)
-                    .font(.title3)
-                    .fontWeight(.bold)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading)
-                    .padding(.top, 10)
-                
-                Spacer()
+                .listStyle(PlainListStyle())
+                .scrollContentBackground(.hidden)
             }
-            .padding(.top, 20)
         }
     }
 }
 
-struct ContentViews_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentViews()
-    }
+struct CompanyInfo {
+    let name: String
+    let rating: Double
+    let reviews: Int
+    let image: String
+    let category1: String
+    let category2: String
 }

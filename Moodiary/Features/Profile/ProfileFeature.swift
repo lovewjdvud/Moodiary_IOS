@@ -9,18 +9,21 @@ import Foundation
 import ComposableArchitecture
 import SwiftUI
 
+
+
 struct ProfileFeature: Reducer {
 
     // MARK: - State
     @ObservableState
     struct State: Equatable {
-        var user: UserModel? = nil
+        var user: UserModel?
         var myPosts: [PostModel] = []
         var followers: [UserModel] = []
-        var followings: [UserModel] = []
-
+        var following: [UserModel] = []
+        var profileImage: String = "person.circle.fill" // 기본 시스템 이미지
+        var selectedTab: ProfileTab = .posts // 기본값을 .posts로 설정
         var isLoading: Bool = false
-        var errorMessage: String? = nil
+        var errorMessage: String?
     }
 
     // MARK: - Action
@@ -48,7 +51,18 @@ struct ProfileFeature: Reducer {
         case fetchFollowingsFailure(String)
 
         case cancelFail(CancelID, String)
+
+        case selectTab(ProfileTab)
+        case editProfileTapped
     }
+
+        enum ProfileTab: Equatable {
+        case posts
+        case saved
+        case liked
+    }
+
+    
 
     enum CancelID {
         case fetchProfile
@@ -161,7 +175,7 @@ struct ProfileFeature: Reducer {
                 .cancellable(id: CancelID.fetchFollowings)
 
             case .fetchFollowingsSuccess(let users):
-                state.followings = users
+                state.following = users
                 return .none
 
             case .fetchFollowingsFailure(let message):
@@ -172,6 +186,14 @@ struct ProfileFeature: Reducer {
             case .cancelFail(let id, let msg):
                 print("❌ ProfileFeature CancelFail [\(id)]: \(msg)")
                 return .cancel(id: id)
+
+            case let .selectTab(tab):
+                state.selectedTab = tab
+                return .none
+            
+            case .editProfileTapped:
+                // Handle edit profile action
+                return .none
             }
         }
     }

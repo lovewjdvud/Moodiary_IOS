@@ -26,12 +26,20 @@ struct AppView: View {
                         )
                     )
                 case .insight:
-                    Text("탐색 화면")
-                        .navigationTitle("탐색")
+                    InsightView(
+                        store: store.scope(
+                            state: \.insight,
+                            action: \.insight
+                        )
+                    )
                     
                 case .profile:
-                    Text("내 프로필 화면")
-                        .navigationTitle("내 프로필")
+                    ProfileView(
+                        store: store.scope(
+                            state: \.profile,
+                            action: \.profile
+                        )
+                    )
                 }
             },
             destination: { destination in

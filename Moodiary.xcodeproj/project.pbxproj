@@ -22,6 +22,10 @@
 		695A3E672DA4129800C4C235 /* TabNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A3E662DA4129800C4C235 /* TabNavigationView.swift */; };
 		695A3E692DA412BC00C4C235 /* NavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A3E682DA412BC00C4C235 /* NavigationStackView.swift */; };
 		695A3E6B2DA4155500C4C235 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A3E6A2DA4155500C4C235 /* AppView.swift */; };
+		695A3E6D2DA5678500C4C235 /* FeedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A3E6C2DA5678500C4C235 /* FeedDetailView.swift */; };
+		695A3E6F2DA6ABBF00C4C235 /* FeedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A3E6E2DA6ABBF00C4C235 /* FeedList.swift */; };
+		695A3E712DA6ABCA00C4C235 /* MoodPostCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A3E702DA6ABCA00C4C235 /* MoodPostCard.swift */; };
+		695A3E732DA6ABD100C4C235 /* FeedCategorySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A3E722DA6ABD100C4C235 /* FeedCategorySelector.swift */; };
 		69C103F42D991AF1005EBF31 /* MoodiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C103F32D991AF1005EBF31 /* MoodiaryApp.swift */; };
 		69C103F62D991AF1005EBF31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C103F52D991AF1005EBF31 /* ContentView.swift */; };
 		69C103F82D991AF2005EBF31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C103F72D991AF2005EBF31 /* Assets.xcassets */; };
@@ -105,6 +109,10 @@
 		695A3E662DA4129800C4C235 /* TabNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNavigationView.swift; sourceTree = "<group>"; };
 		695A3E682DA412BC00C4C235 /* NavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackView.swift; sourceTree = "<group>"; };
 		695A3E6A2DA4155500C4C235 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		695A3E6C2DA5678500C4C235 /* FeedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailView.swift; sourceTree = "<group>"; };
+		695A3E6E2DA6ABBF00C4C235 /* FeedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedList.swift; sourceTree = "<group>"; };
+		695A3E702DA6ABCA00C4C235 /* MoodPostCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodPostCard.swift; sourceTree = "<group>"; };
+		695A3E722DA6ABD100C4C235 /* FeedCategorySelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCategorySelector.swift; sourceTree = "<group>"; };
 		69C103F02D991AF1005EBF31 /* Moodiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moodiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C103F32D991AF1005EBF31 /* MoodiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodiaryApp.swift; sourceTree = "<group>"; };
 		69C103F52D991AF1005EBF31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -355,8 +363,9 @@
 		69C104332D9929F1005EBF31 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				69C104382D992C44005EBF31 /* FeedView.swift */,
 				69C104512D993488005EBF31 /* FeedFeature.swift */,
+				69C104382D992C44005EBF31 /* FeedView.swift */,
+				695A3E6C2DA5678500C4C235 /* FeedDetailView.swift */,
 				69C104372D992C18005EBF31 /* Compose */,
 				69C1043A2D992C51005EBF31 /* Comment */,
 				69C1043B2D992C65005EBF31 /* Components */,
@@ -411,6 +420,9 @@
 			isa = PBXGroup;
 			children = (
 				69C1043C2D992C7B005EBF31 /* FeedCellView.swift */,
+				695A3E6E2DA6ABBF00C4C235 /* FeedList.swift */,
+				695A3E722DA6ABD100C4C235 /* FeedCategorySelector.swift */,
+				695A3E702DA6ABCA00C4C235 /* MoodPostCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -614,12 +626,14 @@
 				69C104282D9926AC005EBF31 /* MDTextView.swift in Sources */,
 				69C1042D2D992857005EBF31 /* String+.swift in Sources */,
 				69C104082D991DA1005EBF31 /* View+.swift in Sources */,
+				695A3E6F2DA6ABBF00C4C235 /* FeedList.swift in Sources */,
 				69C104832D99434C005EBF31 /* TagEmotionStatModel.swift in Sources */,
 				69C104672D99414B005EBF31 /* ProfileClient.swift in Sources */,
 				69C104462D992FAF005EBF31 /* NetworkManager.swift in Sources */,
 				69C1042B2D992808005EBF31 /* FontUtils.swift in Sources */,
 				69C104582D993683005EBF31 /* PostResponseDTO.swift in Sources */,
 				69C104392D992C44005EBF31 /* FeedView.swift in Sources */,
+				695A3E6D2DA5678500C4C235 /* FeedDetailView.swift in Sources */,
 				69C104712D9941FD005EBF31 /* ImageUploadResponseDTO.swift in Sources */,
 				69C1043D2D992C7B005EBF31 /* FeedCellView.swift in Sources */,
 				69C104692D99417E005EBF31 /* UserResponseDTO.swift in Sources */,
@@ -630,6 +644,7 @@
 				69C104652D993F1C005EBF31 /* UpdatePostRequestModel.swift in Sources */,
 				69C104612D993ACE005EBF31 /* Config.swift in Sources */,
 				69C1042F2D99287E005EBF31 /* MDTextField.swift in Sources */,
+				695A3E712DA6ABCA00C4C235 /* MoodPostCard.swift in Sources */,
 				69C104732D994283005EBF31 /* InsightClient.swift in Sources */,
 				69C104632D993E65005EBF31 /* BaseModelDTO.swift in Sources */,
 				695A3E5D2DA3FE8900C4C235 /* TestNavigation.swift in Sources */,
@@ -642,6 +657,7 @@
 				692EEF752D99499C008F0C43 /* InsightFeature.swift in Sources */,
 				69C1045C2D993A3C005EBF31 /* FeedClient.swift in Sources */,
 				69C1040A2D991DB6005EBF31 /* Color+.swift in Sources */,
+				695A3E732DA6ABD100C4C235 /* FeedCategorySelector.swift in Sources */,
 				69C104062D991D6D005EBF31 /* Font+.swift in Sources */,
 				692EEF6F2D994822008F0C43 /* InsightView.swift in Sources */,
 				69C103F62D991AF1005EBF31 /* ContentView.swift in Sources */,
