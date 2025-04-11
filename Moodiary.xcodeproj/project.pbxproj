@@ -24,8 +24,10 @@
 		695A3E6B2DA4155500C4C235 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A3E6A2DA4155500C4C235 /* AppView.swift */; };
 		695A3E6D2DA5678500C4C235 /* FeedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A3E6C2DA5678500C4C235 /* FeedDetailView.swift */; };
 		695A3E6F2DA6ABBF00C4C235 /* FeedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A3E6E2DA6ABBF00C4C235 /* FeedList.swift */; };
-		695A3E712DA6ABCA00C4C235 /* MoodPostCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A3E702DA6ABCA00C4C235 /* MoodPostCard.swift */; };
+		695A3E712DA6ABCA00C4C235 /* FeedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A3E702DA6ABCA00C4C235 /* FeedCellView.swift */; };
 		695A3E732DA6ABD100C4C235 /* FeedCategorySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A3E722DA6ABD100C4C235 /* FeedCategorySelector.swift */; };
+		699663F12DA92BD400D409B5 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699663F02DA92BD400D409B5 /* CustomNavigationBar.swift */; };
+		699663F32DA92FF100D409B5 /* TabBarVisibilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699663F22DA92FF100D409B5 /* TabBarVisibilityManager.swift */; };
 		69C103F42D991AF1005EBF31 /* MoodiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C103F32D991AF1005EBF31 /* MoodiaryApp.swift */; };
 		69C103F62D991AF1005EBF31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C103F52D991AF1005EBF31 /* ContentView.swift */; };
 		69C103F82D991AF2005EBF31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C103F72D991AF2005EBF31 /* Assets.xcassets */; };
@@ -47,7 +49,6 @@
 		69C1042F2D99287E005EBF31 /* MDTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C1042E2D99287E005EBF31 /* MDTextField.swift */; };
 		69C104312D992906005EBF31 /* MDIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C104302D992906005EBF31 /* MDIconButton.swift */; };
 		69C104392D992C44005EBF31 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C104382D992C44005EBF31 /* FeedView.swift */; };
-		69C1043D2D992C7B005EBF31 /* FeedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C1043C2D992C7B005EBF31 /* FeedCellView.swift */; };
 		69C1043F2D992C88005EBF31 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C1043E2D992C88005EBF31 /* CommentView.swift */; };
 		69C104412D992C94005EBF31 /* ComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C104402D992C94005EBF31 /* ComposeView.swift */; };
 		69C104462D992FAF005EBF31 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C104452D992FAF005EBF31 /* NetworkManager.swift */; };
@@ -111,8 +112,10 @@
 		695A3E6A2DA4155500C4C235 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		695A3E6C2DA5678500C4C235 /* FeedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailView.swift; sourceTree = "<group>"; };
 		695A3E6E2DA6ABBF00C4C235 /* FeedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedList.swift; sourceTree = "<group>"; };
-		695A3E702DA6ABCA00C4C235 /* MoodPostCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodPostCard.swift; sourceTree = "<group>"; };
+		695A3E702DA6ABCA00C4C235 /* FeedCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCellView.swift; sourceTree = "<group>"; };
 		695A3E722DA6ABD100C4C235 /* FeedCategorySelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCategorySelector.swift; sourceTree = "<group>"; };
+		699663F02DA92BD400D409B5 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		699663F22DA92FF100D409B5 /* TabBarVisibilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVisibilityManager.swift; sourceTree = "<group>"; };
 		69C103F02D991AF1005EBF31 /* Moodiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moodiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C103F32D991AF1005EBF31 /* MoodiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodiaryApp.swift; sourceTree = "<group>"; };
 		69C103F52D991AF1005EBF31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -134,7 +137,6 @@
 		69C1042E2D99287E005EBF31 /* MDTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDTextField.swift; sourceTree = "<group>"; };
 		69C104302D992906005EBF31 /* MDIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDIconButton.swift; sourceTree = "<group>"; };
 		69C104382D992C44005EBF31 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
-		69C1043C2D992C7B005EBF31 /* FeedCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCellView.swift; sourceTree = "<group>"; };
 		69C1043E2D992C88005EBF31 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		69C104402D992C94005EBF31 /* ComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeView.swift; sourceTree = "<group>"; };
 		69C104452D992FAF005EBF31 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -183,12 +185,20 @@
 		692EEF6B2D994779008F0C43 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				695A3E6A2DA4155500C4C235 /* AppView.swift */,
+				695A3E622DA40F7700C4C235 /* AppFeature.swift */,
 				69C103F32D991AF1005EBF31 /* MoodiaryApp.swift */,
 				69C103F52D991AF1005EBF31 /* ContentView.swift */,
-				695A3E622DA40F7700C4C235 /* AppFeature.swift */,
-				695A3E6A2DA4155500C4C235 /* AppView.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		699663EF2DA92BC500D409B5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				699663F02DA92BD400D409B5 /* CustomNavigationBar.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		69C103E72D991AF1005EBF31 = {
@@ -246,6 +256,7 @@
 			children = (
 				69C104192D9922BD005EBF31 /* Navigation */,
 				69C104042D991D59005EBF31 /* Extensions */,
+				699663F22DA92FF100D409B5 /* TabBarVisibilityManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -299,6 +310,7 @@
 		69C104222D992628005EBF31 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
+				699663EF2DA92BC500D409B5 /* Components */,
 				69C104262D99269A005EBF31 /* Button */,
 				69C104252D99268E005EBF31 /* TextField */,
 				69C104242D992686005EBF31 /* Text */,
@@ -365,7 +377,6 @@
 			children = (
 				69C104512D993488005EBF31 /* FeedFeature.swift */,
 				69C104382D992C44005EBF31 /* FeedView.swift */,
-				695A3E6C2DA5678500C4C235 /* FeedDetailView.swift */,
 				69C104372D992C18005EBF31 /* Compose */,
 				69C1043A2D992C51005EBF31 /* Comment */,
 				69C1043B2D992C65005EBF31 /* Components */,
@@ -419,10 +430,10 @@
 		69C1043B2D992C65005EBF31 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				69C1043C2D992C7B005EBF31 /* FeedCellView.swift */,
 				695A3E6E2DA6ABBF00C4C235 /* FeedList.swift */,
+				695A3E6C2DA5678500C4C235 /* FeedDetailView.swift */,
+				695A3E702DA6ABCA00C4C235 /* FeedCellView.swift */,
 				695A3E722DA6ABD100C4C235 /* FeedCategorySelector.swift */,
-				695A3E702DA6ABCA00C4C235 /* MoodPostCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -635,7 +646,6 @@
 				69C104392D992C44005EBF31 /* FeedView.swift in Sources */,
 				695A3E6D2DA5678500C4C235 /* FeedDetailView.swift in Sources */,
 				69C104712D9941FD005EBF31 /* ImageUploadResponseDTO.swift in Sources */,
-				69C1043D2D992C7B005EBF31 /* FeedCellView.swift in Sources */,
 				69C104692D99417E005EBF31 /* UserResponseDTO.swift in Sources */,
 				69C104772D9942CE005EBF31 /* InsightStatModel.swift in Sources */,
 				69C104312D992906005EBF31 /* MDIconButton.swift in Sources */,
@@ -644,12 +654,13 @@
 				69C104652D993F1C005EBF31 /* UpdatePostRequestModel.swift in Sources */,
 				69C104612D993ACE005EBF31 /* Config.swift in Sources */,
 				69C1042F2D99287E005EBF31 /* MDTextField.swift in Sources */,
-				695A3E712DA6ABCA00C4C235 /* MoodPostCard.swift in Sources */,
+				695A3E712DA6ABCA00C4C235 /* FeedCellView.swift in Sources */,
 				69C104732D994283005EBF31 /* InsightClient.swift in Sources */,
 				69C104632D993E65005EBF31 /* BaseModelDTO.swift in Sources */,
 				695A3E5D2DA3FE8900C4C235 /* TestNavigation.swift in Sources */,
 				69C104852D994369005EBF31 /* PDFReportModel.swift in Sources */,
 				69C1046D2D9941BF005EBF31 /* UserModel+Mapper.swift in Sources */,
+				699663F12DA92BD400D409B5 /* CustomNavigationBar.swift in Sources */,
 				69C1040D2D991E20005EBF31 /* View+EdgeBorder.swift in Sources */,
 				695A3E692DA412BC00C4C235 /* NavigationStackView.swift in Sources */,
 				69C104792D9942DE005EBF31 /* InsightStatModel+Mapper.swift in Sources */,
@@ -674,6 +685,7 @@
 				695A3E672DA4129800C4C235 /* TabNavigationView.swift in Sources */,
 				69C103F42D991AF1005EBF31 /* MoodiaryApp.swift in Sources */,
 				69C1046B2D994190005EBF31 /* UserModel.swift in Sources */,
+				699663F32DA92FF100D409B5 /* TabBarVisibilityManager.swift in Sources */,
 				69C1045A2D993707005EBF31 /* PostModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

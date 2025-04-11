@@ -49,7 +49,7 @@ struct FeedView: View {
                         posts: viewStore.feedList,
                         onDeletePost: { postId in
                             viewStore.send(.deletePost(id: postId))
-                        }
+                        }, store: store
                     )
                 }
             }
@@ -60,61 +60,14 @@ struct FeedView: View {
     }
 }
 
-//struct MoodPostCard: View {
-//    let username: String
-//    let mood: String
-//    let content: String
-//    let category: String
-//    let timestamp: String
-//    
-//    var body: some View {
-//        VStack(alignment: .leading, spacing: 10) {
-//            HStack {
-//                MDTextView(text: username,
-//                          size: 16,
-//                          style: .semiBold,
-//                          color: .white)
-//                
-//                Spacer()
-//                
-//                MDTextView(text: category,
-//                          size: 12,
-//                          style: .regular,
-//                          color: .gray)
-//            }
-//            
-//            MDTextView(text: mood,
-//                      size: 16,
-//                      style: .semiBold,
-//                      color: .purple)
-//            
-//            MDTextView(text: content,
-//                      size: 14,
-//                      style: .regular,
-//                      color: .white,
-//                      maxLines: 3)
-//            
-//            HStack {
-//                Spacer()
-//                MDTextView(text: timestamp,
-//                          size: 12,
-//                          style: .regular,
-//                          color: .gray)
-//            }
-//        }
-//        .padding()
-//        .background(Color(white: 0.2))
-//        .cornerRadius(15)
-//    }
-//}
-////
-//#Preview {
-//    FeedView(
-//        store: Store(initialState: FeedFeature.State()) {
-//            FeedFeature()
-//        })
-//}
-//
+
+#Preview {
+    FeedView(
+        store: Store(initialState: FeedFeature.State()) {
+            FeedFeature()
+        })
+}
+
 
 
 //struct FeedView: View {

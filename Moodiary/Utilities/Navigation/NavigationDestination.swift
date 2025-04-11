@@ -11,10 +11,18 @@ import ComposableArchitecture
 
 /// Navigation 경로를 관리하기 위한 식별 가능한 타입
 public enum NavigationDestination: Hashable, Identifiable {
-    case detail(String)
+    // MARK: Feed
+    case feedDetail(PostModel)
+    
+    // MARK: Insight
     case settings
     case profile(User)
     case custom(String)
+    
+    // MARK: Profile
+    
+    
+    // MARK: common
     
     public var id: Self { self }
     

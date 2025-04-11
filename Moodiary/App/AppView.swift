@@ -45,15 +45,28 @@ struct AppView: View {
             destination: { destination in
                 // 각 네비게이션 목적지에 맞는 뷰 반환
                 switch destination {
-                case let .detail(itemId):
-//                    DetailView(
-//                        store: store.scope(
-//                            state: \.detail,
-//                            action: AppFeature.Action.detail
-//                        ),
-//                        itemId: itemId
-//                    )
-                    Text("커스텀 화면: \(itemId)")
+                    
+                //MARK: FEED
+                case let .feedDetail(post):
+                    FeedDetailView(
+                        post: post,
+                        store: store.scope(
+                            state: \.feed,
+                            action:\.feed
+                        )
+                    )
+                    .toolbar(.hidden, for: .navigationBar) // 네비게이션 바 숨기기
+                    
+                    
+                //MARK: INSIGHT
+                    
+                    
+                    
+                //MARK: PROFILE
+                    
+                    
+                    
+                //MARK: COMMON
                 case .settings:
                     Text("커스텀 화면: ")
 //                    SettingsView()
@@ -66,7 +79,7 @@ struct AppView: View {
                             action: \.profile
                         )
                     )
-                    
+                   
                     
                 case let .custom(name):
                     Text("커스텀 화면: \(name)")

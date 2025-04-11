@@ -183,7 +183,7 @@
 //            destination: { destination in
 //                // 각 네비게이션 목적지에 맞는 뷰 반환
 //                switch destination {
-//                case let .detail(itemId):
+//                case let .feedDetail(post):
 //                    DetailView(
 //                        store: store.scope(
 //                            state: \.detail,

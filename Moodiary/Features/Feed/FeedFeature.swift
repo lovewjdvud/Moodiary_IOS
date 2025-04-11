@@ -86,6 +86,7 @@ struct FeedFeature: Reducer {
         var isWritePresented: Bool = false
         var isEditPresented: Bool = false
         var isLoading: Bool = false
+
         var errorMessage: String?
     }
 
@@ -98,7 +99,10 @@ struct FeedFeature: Reducer {
         case fetchFeed(FeedFilterType)
         case fetchFeedSuccess([PostModel])
         case fetchFeedFailure(String)
-
+        
+        case feedTapped(PostModel)
+        case feedBackButtonTapped
+        
         case deletePost(id: Int)
         case deletePostSuccess(id: Int)
         case deletePostFailure(String)
@@ -175,7 +179,7 @@ struct FeedFeature: Reducer {
                     }
                 }
                 .cancellable(id: CancelID.fetchFeed)
-
+                
             case .fetchFeedSuccess(let posts):
                 state.feedList = posts
                 state.isLoading = false
@@ -186,6 +190,12 @@ struct FeedFeature: Reducer {
                 state.isLoading = false
                 state.errorMessage = errorMessage
                 return .none
+                
+            // 게시글 디테일
+            case .feedTapped,.feedBackButtonTapped:
+                return.none
+                
+            
 
             // 게시글 삭제
             case .deletePost(let id):

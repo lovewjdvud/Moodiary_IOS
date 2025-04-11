@@ -47,16 +47,33 @@ struct AppFeature: Reducer {
         
         Reduce { state, action in
             switch action {
-//            // 여기서 다른 Feature 간의 조율이 필요한 경우 처리
-//            case let .home(.navigateToDetail(itemId)):
-//                // Home에서 Detail로 이동 액션 처리
-//                return .send(.navigation(.navigate(to: .detail(itemId))))
+                
+            //MARK: FEED
+                
+            // 여기서 다른 Feature 간의 조율이 필요한 경우 처리
+            case let .feed(.feedTapped(poest)):
+                // feed에서 Detail로 이동 액션 처리
+                return .send(.navigation(.navigate(to: .feedDetail(poest))))
 //                
+            case .feed(.feedBackButtonTapped):
+                showTabBar()
+                return .send(.navigation(.pop))
+//
 //            case let .home(.navigateToProfile(userId)):
 //                // Home에서 Profile로 이동 액션 처리
 //                let user = NavigationDestination.User(id: UUID(uuidString: userId) ?? UUID(), name: "사용자 \(userId)")
 //                return .send(.navigation(.navigate(to: .profile(user))))
 //                
+                
+            //MARK: INSIGHT
+                
+                
+                
+            //MARK: PROFILE
+                
+                
+            //MARK: COMMON
+                
 //            case .detail(.backButtonTapped):
 //                // Detail에서 뒤로가기 처리
 //                return .send(.navigation(.pop))

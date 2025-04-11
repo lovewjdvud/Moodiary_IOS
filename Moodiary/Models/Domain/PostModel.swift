@@ -13,8 +13,8 @@ import Foundation
 
 import Foundation
 
-struct PostModel: Identifiable, Equatable {
-    let id: Int
+public struct PostModel:Hashable, Identifiable, Equatable,Codable{
+    public let id: Int
     let userId: Int
     let nickname: String
     let profileImageURL: URL?

@@ -215,6 +215,7 @@ struct ProfileView: View {
                     }
                 }
             }
+         
         }
     }
 }
