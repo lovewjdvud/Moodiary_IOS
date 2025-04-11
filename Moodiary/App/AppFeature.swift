@@ -53,10 +53,12 @@ struct AppFeature: Reducer {
             // 여기서 다른 Feature 간의 조율이 필요한 경우 처리
             case let .feed(.feedTapped(poest)):
                 // feed에서 Detail로 이동 액션 처리
+                hideTabBar()
                 return .send(.navigation(.navigate(to: .feedDetail(poest))))
 //                
             case .feed(.feedBackButtonTapped):
                 showTabBar()
+              
                 return .send(.navigation(.pop))
 //
 //            case let .home(.navigateToProfile(userId)):

@@ -16,7 +16,7 @@ public struct NavigationFeature: Reducer {
     public struct State: Equatable {
         public var path: [NavigationDestination]
         public var currentSelectedTab: Tab
-        
+        public var isTabBarHidden: Bool = false // 이 속성 추가
         public init(
             path: [NavigationDestination] = [],
             currentSelectedTab: Tab = .feed
@@ -54,6 +54,8 @@ public struct NavigationFeature: Reducer {
         case pop
         case popToIndex(Int)
         case selectTab(State.Tab)
+        
+        case setTabBarHidden(Bool) // 이 액션 추가
     }
     
     public init() {}
@@ -83,6 +85,10 @@ public struct NavigationFeature: Reducer {
                 state.currentSelectedTab = tab
                 // 탭 변경 시 해당 탭의 네비게이션 스택 초기화
                 state.path.removeAll()
+                return .none
+                
+            case let .setTabBarHidden(hidden):
+                state.isTabBarHidden = hidden
                 return .none
             }
         }

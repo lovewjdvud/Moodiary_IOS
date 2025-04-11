@@ -25,6 +25,8 @@ struct AppView: View {
                             action: \.feed
                         )
                     )
+                    .navigationBarHidden(true) // 네비게이션 바 숨기기
+
                 case .insight:
                     InsightView(
                         store: store.scope(
@@ -32,6 +34,7 @@ struct AppView: View {
                             action: \.insight
                         )
                     )
+                    .navigationBarHidden(true) // 네비게이션 바 숨기기
                     
                 case .profile:
                     ProfileView(
@@ -40,6 +43,7 @@ struct AppView: View {
                             action: \.profile
                         )
                     )
+                    .navigationBarHidden(true) // 네비게이션 바 숨기기
                 }
             },
             destination: { destination in
@@ -55,7 +59,7 @@ struct AppView: View {
                             action:\.feed
                         )
                     )
-                    .toolbar(.hidden, for: .navigationBar) // 네비게이션 바 숨기기
+                    .toolbar(.hidden, for: .tabBar)
                     
                     
                 //MARK: INSIGHT
@@ -96,6 +100,7 @@ struct AppView: View {
                 }
             }
         )
+        
     }
 }
 

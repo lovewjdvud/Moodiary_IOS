@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import UIKit
 import ComposableArchitecture
 
 /// TabView와 NavigationStack을 결합한 View
@@ -51,6 +52,23 @@ public struct TabNavigationView<TabContent: View, Destination: View>: View {
                     .tag(tab)
                 }
             }
+         
+//            .onAppear {
+//                print("dd")
+//                let appearance = UITabBarAppearance()
+//                appearance.configureWithTransparentBackground()
+//                UITabBar.appearance().standardAppearance = appearance
+//                UITabBar.appearance().scrollEdgeAppearance = appearance
+//                
+//                // 완전히 숨기기
+//                UITabBar.appearance().isHidden = true
+//            }
+//            .onChange(of: viewStore.isTabBarHidden) { newValue in
+//                          if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+//                             let tabBarController = windowScene.windows.first?.rootViewController as? UITabBarController {
+//                              tabBarController.tabBar.isHidden = newValue
+//                          }
+//           }
         }
     }
 }
