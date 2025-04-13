@@ -20,7 +20,7 @@ public enum NavigationDestination: Hashable, Identifiable {
     case custom(String)
     
     // MARK: Profile
-    
+    case profileFeedDetail(PostModel)
     
     // MARK: common
     

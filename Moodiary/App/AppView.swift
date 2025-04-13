@@ -61,14 +61,20 @@ struct AppView: View {
                     )
                     .toolbar(.hidden, for: .tabBar)
                     
-                    
                 //MARK: INSIGHT
-                    
+    
                     
                     
                 //MARK: PROFILE
-                    
-                    
+                case let .profileFeedDetail(post):
+                    FeedDetailView(
+                        post: post,
+                        store: store.scope(
+                            state: \.feed,
+                            action:\.feed
+                        )
+                    )
+                    .toolbar(.hidden, for: .tabBar)
                     
                 //MARK: COMMON
                 case .settings:

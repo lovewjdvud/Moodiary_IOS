@@ -191,26 +191,32 @@ struct ProfileView: View {
                         ], spacing: 1) {
                             // Show different posts based on selected tab
                             ForEach(getMoodPosts(for: viewStore.selectedTab), id: \.id) { post in
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text("post.mood")
-                                        .font(.caption)
-                                        .foregroundColor(.purple)
+                                ZStack {
+                                    Color(white: 0.15)
                                     
-                                    Text("post.titl")
-                                        .font(.caption)
-                                        .foregroundColor(.white)
-                                        .lineLimit(3)
-                                    
-                                    Spacer()
-                                    
-                                    Text("post.category")
-                                        .font(.caption2)
-                                        .foregroundColor(.gray)
+//                                    Button(action: { viewStore.send(.profileFeedDetailView(post)) }) {
+                                        
+                                        VStack(alignment: .leading, spacing: 2) {
+                                            Text(post.mood)
+                                                .font(.caption)
+                                                .foregroundColor(.purple)
+                                            
+                                            Text(post.title)
+                                                .font(.caption)
+                                                .foregroundColor(.white)
+                                                .lineLimit(3)
+                                            
+                                            Spacer()
+                                            
+                                            Text(post.category)
+                                                .font(.caption2)
+                                                .foregroundColor(.gray)
+                                        }
+                                        .padding(8)
+                                    }
                                 }
-                                .padding(8)
-                                .frame(height: UIScreen.main.bounds.width / 3)
-                                .background(Color(white: 0.15))
-                            }
+                                .frame(width: UIScreen.main.bounds.width / 3 - 2, height: UIScreen.main.bounds.width / 3 - 2)
+//                            }
                         }
                     }
                 }

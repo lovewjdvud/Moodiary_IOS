@@ -67,17 +67,17 @@ struct InsightView: View {
                                 .padding(.horizontal)
                             }
                             
-                            // 감정 상관관계
-//                            if let correlation = viewStore.correlation {
-//                                CorrelationCard(correlation: correlation)
-//                                    .padding(.horizontal)
-//                            }
-//                            
-//                            // 태그별 감정 통계
-//                            if !viewStore.tagEmotionStats.isEmpty {
-//                                TagEmotionCard(store: store)
-//                                    .padding(.horizontal)
-//                            }
+                             // 감정 상관관계
+                            if let correlation = viewStore.correlation {
+                                CorrelationCard(correlation: correlation)
+                                    .padding(.horizontal)
+                            }
+                            
+                            // 태그별 감정 통계
+                            if !viewStore.tagEmotionStats.isEmpty {
+                                TagEmotionCard(store: store)
+                                    .padding(.horizontal)
+                            }
 //                            
 //                            // 월간 리포트 버튼
 //                            Button(action: {

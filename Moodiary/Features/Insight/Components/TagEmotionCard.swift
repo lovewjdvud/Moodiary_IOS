@@ -25,7 +25,7 @@ struct TagEmotionCard: View {
                     VStack(spacing: 15) {
                         ForEach(viewStore.tagEmotionStats, id: \.id) { stat in
                             VStack(alignment: .leading, spacing: 5) {
-                                Text("#\(String(describing: stat.tag))")
+                                Text("#\(stat.tag ?? "")")
                                     .font(.subheadline)
                                     .foregroundColor(.white)
                                 

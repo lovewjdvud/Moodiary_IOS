@@ -16,6 +16,7 @@ struct ProfileFeature: Reducer {
     // MARK: - State
     @ObservableState
     struct State: Equatable {
+        
         var user: UserModel?
         var myPosts: [PostModel] = []
         var followers: [UserModel] = []
@@ -24,6 +25,7 @@ struct ProfileFeature: Reducer {
         var selectedTab: ProfileTab = .posts // 기본값을 .posts로 설정
         var isLoading: Bool = false
         var errorMessage: String?
+        
     }
 
     // MARK: - Action
@@ -41,6 +43,8 @@ struct ProfileFeature: Reducer {
         case fetchMyPosts
         case fetchMyPostsSuccess([PostModel])
         case fetchMyPostsFailure(String)
+        
+        case profileFeedDetailView(PostModel)
 
         case fetchFollowers
         case fetchFollowersSuccess([UserModel])
@@ -180,6 +184,10 @@ struct ProfileFeature: Reducer {
 
             case .fetchFollowingsFailure(let message):
                 state.errorMessage = message
+                return .none
+                
+            case .profileFeedDetailView(let post):
+                
                 return .none
 
             // MARK: 실패/취소 핸들링
