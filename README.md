@@ -20,4 +20,3 @@ Moodiary는 감정 관리와 자기 성찰을 돕기 위해 설계된 앱으로,
   - XCTest: 유닛 테스트 및 UI 테스트
   - URLSession: 네트워크 요청 처리
 
-</rewritten_file> 

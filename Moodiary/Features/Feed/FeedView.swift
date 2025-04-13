@@ -12,49 +12,51 @@ struct FeedView: View {
     let store: StoreOf<FeedFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: { $0 }) { viewStore in
-            ZStack {
-                Color.black.edgesIgnoringSafeArea(.all)
-                
-                VStack(spacing: 0) {
-                    // 팔로워/전체 토글
-                    HStack {
-                        Button(action: { viewStore.send(.selectFeedFilter(.following)) }) {
-                            MDTextView(text: "Following",
-                                     size: 16,
-                                     style: .bold,
-                                     color: viewStore.selectedFilter == .following ? .white : .gray)
+        WithPerceptionTracking {
+            WithViewStore(self.store, observe: { $0 }) { viewStore in
+                ZStack {
+                    Color.black.edgesIgnoringSafeArea(.all)
+                    
+                    VStack(spacing: 0) {
+                        // 팔로워/전체 토글
+                        HStack {
+                            Button(action: { viewStore.send(.selectFeedFilter(.following)) }) {
+                                MDTextView(text: "Following",
+                                         size: 16,
+                                         style: .bold,
+                                         color: viewStore.selectedFilter == .following ? .white : .gray)
+                            }
+                            
+                            Button(action: { viewStore.send(.selectFeedFilter(.all)) }) {
+                                MDTextView(text: "All",
+                                         size: 16,
+                                         style: .bold,
+                                         color: viewStore.selectedFilter == .all ? .white : .gray)
+                            }
                         }
+                        .padding()
+                        .background(Color.black)
                         
-                        Button(action: { viewStore.send(.selectFeedFilter(.all)) }) {
-                            MDTextView(text: "All",
-                                     size: 16,
-                                     style: .bold,
-                                     color: viewStore.selectedFilter == .all ? .white : .gray)
-                        }
+                         // 카테고리 선택기
+                         FeedCategorySelector(
+                             selectedCategory: viewStore.binding(
+                                 get: \.selectedCategory,
+                                 send: { .setCategory($0) }
+                             )
+                         )
+                        
+                         // 피드 리스트
+                         FeedList(
+                             posts: viewStore.feedList,
+                             onDeletePost: { postId in
+                                 viewStore.send(.deletePost(id: postId))
+                             }, store: store
+                         )
                     }
-                    .padding()
-                    .background(Color.black)
-                    
-                    // 카테고리 선택기
-                    FeedCategorySelector(
-                        selectedCategory: viewStore.binding(
-                            get: \.selectedCategory,
-                            send: { .setCategory($0) }
-                        )
-                    )
-                    
-                    // 피드 리스트
-                    FeedList(
-                        posts: viewStore.feedList,
-                        onDeletePost: { postId in
-                            viewStore.send(.deletePost(id: postId))
-                        }, store: store
-                    )
                 }
-            }
-            .onAppear {
-                viewStore.send(.fetchFeed(viewStore.selectedFilter))
+                .onAppear {
+                    viewStore.send(.fetchFeed(viewStore.selectedFilter))
+                }
             }
         }
     }

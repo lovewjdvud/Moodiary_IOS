@@ -10,7 +10,7 @@
 import Foundation
 
 struct InsightStatResponseDTO: Codable {
-    let date: String           // yyyy-MM-dd
+    let date: Date           // yyyy-MM-dd
     let emotion: String        // 😊, 😢 등
     let productivity: Int      // 1~5
 }
