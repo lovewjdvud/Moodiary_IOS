@@ -37,4 +37,16 @@ Moodiary는 감정 관리와 자기 성찰을 돕기 위해 설계된 앱으로,
 
 ## 라이선스
 
-이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 `LICENSE` 파일을 참조하세요. 
+이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 `LICENSE` 파일을 참조하세요.
+
+## 기술 스택
+
+- **언어**: Swift
+- **아키텍처**: Composable Architecture (TCA)
+- **기술 스택**:
+  - SwiftUI: 사용자 인터페이스를 구축하기 위해 사용
+  - Combine: 비동기 이벤트 처리 및 데이터 바인딩
+  - XCTest: 유닛 테스트 및 UI 테스트
+  - URLSession: 네트워크 요청 처리
+
+</rewritten_file> 
